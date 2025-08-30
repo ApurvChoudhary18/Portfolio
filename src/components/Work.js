@@ -121,7 +121,7 @@ const Work = () => {
             transition={{ duration: 0.8 }}
             className="work-header"
           >
-            <h2>Creating next level digital products</h2>
+            <h2>Building digital Products that stand out</h2>
             <div className="work-filters">
               <div
                 className={`filter-pill ${activeFilter === 'All' ? 'active' : ''}`}
