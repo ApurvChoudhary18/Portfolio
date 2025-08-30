@@ -30,8 +30,8 @@ const Home = () => {
   // Only 3 works here
   const recentItems = [
     { title: "SKILLSTACK", meta: "Design & Development", image: skillhunt, to: "/work" },
-    { title: "THE DAMAI",  meta: "Design and Development", image: dalai,    to: "/work" },
-    { title: "FABRIC",     meta: "Design and Development", image: fabric,   to: "/work" },
+    { title: "EDVORA",  meta: "Design and Development", image: dalai,    to: "/work" },
+    { title: "VOYAGE",     meta: "Design and Development", image: fabric,   to: "/work" },
   ];
 
   // --- IST Time ---
