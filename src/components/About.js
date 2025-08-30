@@ -4,6 +4,7 @@ import myPic from "../assets/myPic.png";
 import { motion } from "framer-motion";
 import { Link } from 'react-router-dom';
 import SphereAnimation from './SphereAnimation';
+import mainPic from "../assets/mainPic.png"
 
 const About = () => {
   const containerVariants = {
@@ -23,7 +24,7 @@ const About = () => {
     },
   };
 
-  // IST time (same fix as Home.js)
+  // IST time
   const [istTime, setIstTime] = useState('');
   useEffect(() => {
     const formatIST = () =>
@@ -60,11 +61,19 @@ const About = () => {
 
           <motion.p
             variants={itemVariants}
-            className="max-w-2xl mx-auto text-lg text-gray-600 mb-12"
+            className="max-w-2xl mt-20 mx-auto text-lg text-gray-600 mb-8"
           >
             I develop tailor-made software solutions by applying a comprehensive skill set to every project. My commitment to exceptional quality means I'm always pushing the boundaries of what's possible in development.<br />
             <span className="italic text-gray-400">Always exploring...</span>
           </motion.p>
+
+          {/* Profile Image Below Always Exploring */}
+          <motion.div variants={itemVariants}>
+            <div className="about-profile-circle">
+              <img src={myPic} alt="Profile" />
+            </div>
+          </motion.div>
+
         </motion.div>
       </div>
 
@@ -90,7 +99,7 @@ const About = () => {
               <div className="h-px bg-gray-300 w-full mb-6"></div>
               <h3 className="text-2xl font-semibold mb-4">Design</h3>
               <p className="text-gray-600">
-              I've consistently delivered powerful, user-friendly websites, and I can do the same for you. <br />
+                I've consistently delivered powerful, user-friendly websites, and I can do the same for you. <br />
                 <span className="italic text-gray-500">
                   (Specializing in MERN stack development since 2023)
                 </span>
@@ -103,7 +112,7 @@ const About = () => {
               <div className="h-px bg-gray-300 w-full mb-6"></div>
               <h3 className="text-2xl font-semibold mb-4">Development</h3>
               <p className="text-gray-600">
-              I design and develop scalable websites from scratch that blend smoothly with visuals. My focus is on micro animations, seamless transitions, and meaningful interactions.
+                I design and develop scalable websites from scratch that blend smoothly with visuals. My focus is on micro animations, seamless transitions, and meaningful interactions.
               </p>
             </motion.div>
 
@@ -115,7 +124,7 @@ const About = () => {
                 ✦ The full package
               </h3>
               <p className="text-gray-600">
-              From concept to implementation, I bring a project to life. My strong sense of design and development skills enable me to create outstanding digital experiences.
+                From concept to implementation, I bring a project to life. My strong sense of design and development skills enable me to create outstanding digital experiences.
               </p>
             </motion.div>
           </div>

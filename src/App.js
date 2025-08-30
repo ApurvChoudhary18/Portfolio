@@ -9,11 +9,13 @@ import { useState } from 'react';
 import Greeting from './components/Greeting';
 import SmoothScroll from './components/SmoothScroll';
 import { AnimatePresence, motion } from 'framer-motion';
+import PageTransition from './components/PageTransition';
+import ScrollTop from './components/ScrollTop'; // 👈 import
 
 function App() {
-
   const [greetingSplash, setGreetingSplash] = useState(true);
   const location = useLocation();
+  const [transitionPage, setTransitionPage] = useState(null);
 
   const restartGreeting = () => {
     setGreetingSplash(true);
@@ -32,20 +34,32 @@ function App() {
 
   return (
     <>
+      {/* Page Transition Overlay */}
+      <PageTransition 
+        pageName={transitionPage} 
+        onFinish={() => setTransitionPage(null)} 
+      />
+
       {greetingSplash ? (
         <Greeting onFinish={() => setGreetingSplash(false)} />
       ) : (
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }} // Adjust duration and delay as needed
+          transition={{ duration: 0.8, delay: 0.2 }}
         >
           <SmoothScroll />
           <div className='App'>
-            <Navbar restartGreeting={restartGreeting} />
+            {/* Navbar */}
+            <Navbar restartGreeting={restartGreeting} setTransitionPage={setTransitionPage} />
+
+            {/* 👇 ScrollToTop here */}
+            <ScrollTop />
+
+            {/* Routes with animations */}
             <AnimatePresence mode="wait">
               <Routes location={location} key={location.pathname}>
-                <Route path='/' element={<PageWrapper><Home /></PageWrapper>} />
+                <Route path='/' element={<PageWrapper><Home setTransitionPage={setTransitionPage}/></PageWrapper>} />
                 <Route path='/work' element={<PageWrapper><Work /></PageWrapper>} />
                 <Route path='/about' element={<PageWrapper><About /></PageWrapper>} />
                 <Route path='/contact' element={<PageWrapper><Contact /></PageWrapper>} />

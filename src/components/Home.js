@@ -15,7 +15,7 @@ import skillhunt from "../assets/skillhunt.png";
 import dalai from "../assets/dalai.png";
 import fabric from "../assets/fabric.png";
 
-const Home = () => {
+const Home = ({setTransitionPage}) => {
   // --- Hover preview state for RECENT WORK ---
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const [isPreviewVisible, setIsPreviewVisible] = useState(false);
@@ -127,16 +127,12 @@ const Home = () => {
 
         {/* Hero Text */}
         <div className="hero-text-container">
-          <svg className="hero-arrow-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          {/* <svg className="hero-arrow-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M7 17L17 7" stroke="#fff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
             <path d="M17 17V7" stroke="#fff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
             <path d="M7 7H17" stroke="#fff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
-          <div className="hero-subtext">
-            Freelance
-            <br />
-            Designer & Developer
-          </div>
+          </svg> */}
+          
         </div>
 
         {/* Large Running Name Section - FIXED */}
@@ -168,9 +164,15 @@ const Home = () => {
       </div>
 
       {/* Sphere */}
-      <div className='sphere'>
-        <SphereAnimation label="About Me" to="/about" />
-      </div>
+      {/* Sphere */}
+<div className='sphere'>
+  <SphereAnimation 
+    label="About Me" 
+    to="/about" 
+    onTriggerTransition={() => setTransitionPage("About")}
+  />
+</div>
+
 
       {/* Recent Work */}
       <div className="recent-work-wrapper">

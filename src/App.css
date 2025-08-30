@@ -302,7 +302,26 @@ body {
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid #455ce9;
+  object-position: top center;
 }
+
+.page-transition-overlay {
+  position: fixed;
+  inset: 0;
+  background: #000;   /* black overlay */
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.page-transition-text {
+  color: #fff;
+  font-size: 3rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
 
 .arrow-icon-wrapper {
   transform: rotate(90deg);
@@ -676,6 +695,24 @@ body {
   margin: 22px 0;
 }
 
+/* New styling for About page profile picture */
+.about-profile-circle {
+  max-width: 195px;       /* portrait rectangle width */
+  margin: 40px auto 60px; /* center + spacing */
+  border-radius: 12px;    /* thoda rounded corners */
+  overflow: hidden;       /* photo border ke bahar na jaye */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);    /* extra image bahar na nikle */
+}
+
+
+.about-profile-circle:hover {
+  width: 100%;    /* width ke hisaab se fit hoga */
+  height: auto;   /* apna natural portrait ratio maintain karega */
+  display: block;
+  object-fit: cover; 
+}
+
+
 /* Updated .recent-row to be the new .recent-work-item class */
 .recent-work-item {
   display: flex;
@@ -732,6 +769,17 @@ body {
 }
 
 .profile-circle {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 2px solid #3b62e8;
+  object-fit: cover;
+  flex-shrink: 0;
+  margin-top: 180px;
+  object-position: top center;
+}
+
+.about-profile-pic {
   width: 120px;
   height: 120px;
   border-radius: 50%;
