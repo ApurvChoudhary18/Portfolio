@@ -100,7 +100,7 @@ const Home = ({setTransitionPage}) => {
     <div onMouseMove={handleMouseMove}>
       {/* Section 1 - Banner with Badge */}
       <div className="home-banner-container">
-        <img src={black4} alt='img' className='home-banner' />
+        <img src={brown} alt='img' className='home-banner' />
 
         {/* Located badge overlay */}
         <div className="location-badge">
@@ -157,8 +157,7 @@ const Home = ({setTransitionPage}) => {
         </div>
         <div className="section-2b">
           <p>
-            The combination of my passion for design, code & interaction positions me in a unique place
-            in the web design world.
+          I combine my love for design, code, and interaction to create digital experiences that are both visually compelling and seamlessly functional.
           </p>
         </div>
       </div>
